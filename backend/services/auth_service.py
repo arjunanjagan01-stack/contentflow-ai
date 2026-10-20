@@ -14,6 +14,9 @@ app.add_middleware(
 @app.get("/health")
 async def health():
     return JSONResponse({"status": "healthy", "service": "auth"})
+@app.get("/")
+async def root():
+    return {"message": "ContentFlow AI backend is running", "docs": "/docs"}
 
 if __name__ == "__main__":
     import uvicorn
